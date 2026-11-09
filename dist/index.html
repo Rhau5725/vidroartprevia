@@ -66,6 +66,10 @@
     .filter button.active, .filter button:hover { background:var(--ink); color:#fff; border-color:var(--ink); }
     .collection-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
     .collection-card { min-height:380px; position:relative; border-radius:12px; overflow:hidden; background:#ddd; isolation:isolate; }
+    .collection-card.placeholder { background:linear-gradient(145deg,#e6e1d6,#c9d3c2); border:1px dashed rgba(37,51,45,.32); }
+    .collection-card.placeholder::before { content:""; position:absolute; inset:18px; z-index:-1; border:1px solid rgba(255,255,255,.54); border-radius:8px; background:radial-gradient(circle at 25% 25%,rgba(255,255,255,.6),transparent 25%),radial-gradient(circle at 75% 70%,rgba(198,111,82,.2),transparent 30%); transform:none; }
+    .collection-card.placeholder::after { background:linear-gradient(180deg,rgba(37,51,45,0) 34%,rgba(37,51,45,.2)); }
+    .photo-placeholder { position:absolute; z-index:1; top:50%; left:50%; transform:translate(-50%,-60%); padding:10px 14px; border:1px solid rgba(37,51,45,.28); border-radius:999px; color:var(--ink); background:rgba(251,250,247,.74); white-space:nowrap; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
     .collection-card::before { content:""; position:absolute; inset:0; z-index:-1; background-image:var(--image); background-size:500% auto; background-position:var(--pos) center; transform:scale(1.03); transition:transform .45s; }
     .collection-card:hover::before { transform:scale(1.1); }
     .collection-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(20,26,21,.65)); z-index:-1; }
@@ -164,10 +168,10 @@
       <div class="section-head"><div><p class="section-kicker">Escolha pelo sentimento</p><h2>Uma coleção para<br/>cada ocasião.</h2></div><p class="section-intro">Da delicadeza de uma flor à presença de uma cesta completa — encontre a forma certa de dizer o que importa.</p></div>
       <div class="filter" role="tablist" aria-label="Filtrar coleção"><button class="active" data-filter="all">Tudo</button><button data-filter="flores">Flores</button><button data-filter="plantas">Plantas</button><button data-filter="presentes">Presentes</button></div>
       <div class="collection-grid">
-        <a class="collection-card" data-category="flores" href="#contato" style="--image:url('assets/instagram-reference.png');--pos:0%"><div class="collection-info"><span>Para celebrar</span><h3>Flores</h3></div></a>
-        <a class="collection-card" data-category="plantas" href="#contato" style="--image:url('assets/instagram-reference.png');--pos:32%"><div class="collection-info"><span>Para durar</span><h3>Plantas</h3></div></a>
-        <a class="collection-card" data-category="presentes" href="#contato" style="--image:url('assets/instagram-reference.png');--pos:66%"><div class="collection-info"><span>Para surpreender</span><h3>Cestas</h3></div></a>
-        <a class="collection-card" data-category="presentes" href="#contato" style="--image:url('assets/instagram-reference.png');--pos:100%"><div class="collection-info"><span>Para marcar</span><h3>Detalhes</h3></div></a>
+        <a class="collection-card placeholder" data-category="flores" href="#contato" style="--image:none"><div class="photo-placeholder">Foto a adicionar</div><div class="collection-info"><span>Para celebrar</span><h3>Flores</h3></div></a>
+        <a class="collection-card placeholder" data-category="plantas" href="#contato" style="--image:none"><div class="photo-placeholder">Foto a adicionar</div><div class="collection-info"><span>Para durar</span><h3>Plantas</h3></div></a>
+        <a class="collection-card placeholder" data-category="presentes" href="#contato" style="--image:none"><div class="photo-placeholder">Foto a adicionar</div><div class="collection-info"><span>Para surpreender</span><h3>Cestas</h3></div></a>
+        <a class="collection-card placeholder" data-category="presentes" href="#contato" style="--image:none"><div class="photo-placeholder">Foto a adicionar</div><div class="collection-info"><span>Para marcar</span><h3>Detalhes</h3></div></a>
       </div>
     </section>
 
